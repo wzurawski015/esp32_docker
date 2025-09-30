@@ -1,0 +1,34 @@
+# Docker-specific ignores
+.git
+.gitignore
+.dockerignore
+
+# Build artifacts
+build/
+sdkconfig.old
+*.bin
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+LICENSE
+
+# CI/CD
+.github/

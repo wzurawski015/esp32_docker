@@ -53,3 +53,28 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# ESP-IDF specific
+project/build/
+project/sdkconfig
+project/sdkconfig.old
+project/.config.old
+project/dependencies.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
