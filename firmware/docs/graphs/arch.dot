@@ -1,0 +1,14 @@
+digraph "Arch" {
+  rankdir=LR; node[shape=box,style=rounded,fontsize=10];
+  subgraph cluster_ports { label="ports/"; color=gray;
+    i2c[label="i2c_async_port"]; uart[label="uart_port"]; ow[label="onewire_port"]; time[label="time_port"]; log[label="log_sink"];
+  }
+  subgraph cluster_drivers { label="drivers/"; color=lightblue;
+    lcd[label="lcd1602 (dev+fb)"]; ds[label="ds18b20"];
+  }
+  subgraph cluster_infra { label="infrastructure/"; color=lightgoldenrod;
+    i2cs[label="idf_i2c_service"]; uarts[label="idf_uart_port"]; times[label="idf_time_port"]; ows[label="idf_onewire"];
+  }
+  app[shape=oval,label="app/main\n(UI,SENSOR,logger)"];
+  app->lcd; app->ds; lcd->i2c; ds->ow; i2c->i2cs; uart->uarts; time->times; ow->ows; app->log;
+}

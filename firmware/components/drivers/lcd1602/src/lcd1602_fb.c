@@ -1,0 +1,6 @@
+#include "drivers/lcd1602_fb.h"
+#include <string.h>
+ca_status_t lcd1602_fb_init(lcd1602_fb_t* fb, lcd1602_dev_t* dev){ if(!fb||!dev) return CA_EINVAL; memset(fb,0,sizeof(*fb)); fb->dev=dev; fb->cols=dev->cols; fb->rows=dev->rows; return CA_OK; }
+ca_status_t lcd1602_fb_clear(lcd1602_fb_t* fb){ for(int r=0;r<fb->rows;r++) for(int c=0;c<fb->cols;c++){ fb->buf[r][c]=' '; fb->dirty[r][c]=1; } return CA_OK; }
+ca_status_t lcd1602_fb_draw_text(lcd1602_fb_t* fb, uint8_t col, uint8_t row, const char* s){ if(row>=fb->rows||col>=fb->cols) return CA_EINVAL; uint8_t c=col,r=row; while(*s&&r<fb->rows){ if(c>=fb->cols){ r++; c=0; if(r>=fb->rows) break; } fb->buf[r][c]=(uint8_t)*s++; fb->dirty[r][c]=1; c++; } return CA_OK; }
+ca_status_t lcd1602_fb_flush_minimal(lcd1602_fb_t* fb){ for(uint8_t row=0;row<fb->rows;++row){ uint8_t col=0; while(col<fb->cols){ while(col<fb->cols && !fb->dirty[row][col]) col++; if(col>=fb->cols) break; uint8_t start=col; while(col<fb->cols && fb->dirty[row][col]) col++; uint8_t end=col; uint8_t addr=(row==0?0x00:0x40)|start; lcd1602_dev_set_ddram(fb->dev, addr); lcd1602_dev_write_bytes(fb->dev, &fb->buf[row][start], end-start); for(uint8_t i=start;i<end;i++) fb->dirty[row][i]=0; } } return CA_OK; }

@@ -1,0 +1,5 @@
+digraph "DS18 pipeline" {
+  rankdir=LR; node[shape=box,style=rounded,fontsize=10];
+  trig[label="trigger_convert"]; wait[label="wait t_conv (per res)"]; read[label="read scratchpad"]; upd[label="update LCD"];
+  trig->wait->read->upd;
+}
