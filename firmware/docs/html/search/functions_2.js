@@ -1,7 +1,0 @@
-var searchData=
-[
-  ['idf_5fi2c_5fservice_5fstart_248',['idf_i2c_service_start',['../idf__i2c__service_8h.html#af9121e3e92c424427305035f4950888f',1,'idf_i2c_service_start(const idf_i2c_service_cfg_t *cfg, i2c_async_port_t *out_port):&#160;idf_i2c_service.c'],['../idf__i2c__service_8c.html#afdd18352d6503b5db70ce0ae3aa2cbd3',1,'idf_i2c_service_start(const idf_i2c_service_cfg_t *cfg, i2c_async_port_t *out):&#160;idf_i2c_service.c']]],
-  ['idf_5fonewire_5fcreate_249',['idf_onewire_create',['../idf__onewire_8h.html#a8dd29ab1a54affe14ac6b304a4f34d3a',1,'idf_onewire_create(const idf_onewire_cfg_t *cfg, onewire_port_t *out):&#160;idf_onewire.c'],['../idf__onewire_8c.html#a8dd29ab1a54affe14ac6b304a4f34d3a',1,'idf_onewire_create(const idf_onewire_cfg_t *cfg, onewire_port_t *out):&#160;idf_onewire.c']]],
-  ['idf_5ftime_5fcreate_250',['idf_time_create',['../idf__time__port_8h.html#ae4de440f189858070d67c6a7dcd561fe',1,'idf_time_create(time_port_t *out):&#160;idf_time_port.c'],['../idf__time__port_8c.html#ae4de440f189858070d67c6a7dcd561fe',1,'idf_time_create(time_port_t *out):&#160;idf_time_port.c']]],
-  ['idf_5fuart_5fcreate_251',['idf_uart_create',['../idf__uart__port_8h.html#addd56e2d97b63b60b888a1f58fec769e',1,'idf_uart_create(const idf_uart_cfg_t *cfg, uart_port_t *out):&#160;idf_uart_port.c'],['../idf__uart__port_8c.html#addd56e2d97b63b60b888a1f58fec769e',1,'idf_uart_create(const idf_uart_cfg_t *cfg, uart_port_t *out):&#160;idf_uart_port.c']]]
-];

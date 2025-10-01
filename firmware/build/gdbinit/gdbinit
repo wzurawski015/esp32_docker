@@ -1,0 +1,2 @@
+source /work/build/gdbinit/symbols
+source /work/build/gdbinit/connect
