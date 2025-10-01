@@ -1,3 +1,9 @@
-idf_component_register(SRCS "src/idf_time_port.c"
-                       INCLUDE_DIRS "include"
-                       REQUIRES ports)
+idf_component_register(
+  SRCS
+  "src/idf_time_port.c"
+  INCLUDE_DIRS
+  "include"
+  REQUIRES
+  ports
+  esp_timer
+  freertos)
