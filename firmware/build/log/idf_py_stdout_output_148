@@ -1,0 +1,55 @@
+00000 size=03ec0h �ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x1 (POWERON),boot:0xc (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875720,len:0x18ec
+load:0x4086c110,len:0xe68
+load:0x4086e610,len:0x2f4c
+entry 0x4086c11a
+[0;32mI (23) boot: ESP-IDF v5.3.4-246-gd94ddc0745 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct  1 2025 10:07:56[0m
+[0;32mI (24) boot: chip revision: v0.1[0m
+[0;32mI (28) boot: efuse block revision: v0.3[0m
+[0;32mI (32) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (37) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32c6: SPI Flash Size : 8MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (70) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (78) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (85) boot: End of partition table[0m
+[0;32mI (89) esp_image: segment 0: paddr=00010020 vaddr=42020020 size=0c130h ( 49456) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c158 vaddr=40800000 size=03ec0h ( 16064) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=1b748h (112456) map[0m
+[0;32mI (136) esp_image: segment 3: paddr=0003b770 vaddr=40803ec0 size=0b86ch ( 47212) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (162) cpu_start: Unicore app[0m
+[0;32mI (170) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (171) app_init: Application information:[0m
+[0;32mI (173) app_init: Project name:     esp32c6_extreme_clean_lcd_ds18[0m
+[0;32mI (180) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Oct  1 2025 10:10:28[0m
+[0;32mI (191) app_init: ELF file SHA256:  84b4e5a5b...[0m
+[0;32mI (196) app_init: ESP-IDF:          v5.3.4-246-gd94ddc0745[0m
+[0;32mI (202) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (207) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (217) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (224) heap_init: At 40810770 len 0006BEA0 (431 KiB): RAM[0m
+[0;32mI (230) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (236) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (243) spi_flash: detected chip: generic[0m
+[0;32mI (247) spi_flash: flash io: dio[0m
+[0;33mW (251) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (262) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (268) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (275) coexist: coex firmware version: a13b09d[0m
+[0;32mI (292) coexist: coexist�[0.053][INFO][APP ] boot
+[0;32mI (293) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) gpio: GPIO[18]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (353) main_task: Returned from app_main()[0m
