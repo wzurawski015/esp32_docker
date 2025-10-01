@@ -4,20 +4,22 @@ menu "I2C (LCD)"
 config APP_I2C_SDA
     int "I2C SDA"
     range 0 48
-    default 21
+    default 10     # ESP32-C6: zalecane GPIO10
+
 config APP_I2C_SCL
     int "I2C SCL"
     range 0 48
-    default 22
+    default 11     # ESP32-C6: zalecane GPIO11
+
 config APP_I2C_HZ
     int "I2C Hz"
-    default 400000
+    default 100000 # zacznij od 100kHz (bezpiecznie dla LCD V2.0)
 endmenu
 
 menu "LCD"
 config APP_LCD_ADDR
     hex "LCD 7-bit address"
-    default 0x3E
+    default 0x3E   # AIP31068/ST7032
 endmenu
 
 menu "1-Wire / DS18B20"
@@ -39,11 +41,11 @@ config APP_UART_NUM
 config APP_UART_TX
     int "UART TX gpio"
     range 0 48
-    default 43
+    default 16     # U0TXD
 config APP_UART_RX
     int "UART RX gpio"
     range 0 48
-    default 44
+    default 17     # U0RXD
 config APP_UART_BAUD
     int "UART baud"
     default 115200
