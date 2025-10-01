@@ -1,48 +1,92 @@
-# Prerequisites
+###############################################################################
+# Project: ESP-IDF (firmware/) + Docker + Doxygen
+# Note: sections are grouped; adjust toggles in "ESP-IDF" if you want to track
+#       sdkconfig or vendor components.
+###############################################################################
+
+# --- Always keep these tracked (even if broader rules would match) -----------
+!.gitignore
+!LICENSE
+!README.md
+!**/docs/Doxyfile
+!**/docs/graphs/**
+!.editorconfig
+!.clang-format
+
+# --- OS junk -----------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux
+*~
+.fuse_hidden*
+.nfs*
+.lost+found/
+
+# --- Editors / IDEs -----------------------------------------------------------
+.vscode/
+.vscode-ipch/
+.idea/
+*.code-workspace
+*.sublime-*
+*.iml
+# Vim/Emacs
+*.swp
+*.swo
+*.swn
+.*.sw?
+.#*
+*~
+
+# --- Python -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+.mypy_cache/
+.pytype/
+.tox/
+
+# --- C / C++ / Toolchains / CMake ---------------------------------------------
+# Generic build artefacts
 *.d
-
-# Object files
 *.o
-*.ko
 *.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
 *.a
 *.la
 *.lo
-
-# Shared objects (inc. Windows DLLs)
+*.lib
 *.dll
 *.so
 *.so.*
 *.dylib
-
-# Executables
 *.exe
 *.out
 *.app
-*.i*86
-*.x86_64
 *.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
+*.elf
+*.ilk
+*.exp
+*.map
+*.dwo
 *.pdb
+*.idb
+*.su
 
-# Kernel Module Compile Results
+# Kernel module leftovers
 *.mod*
 *.cmd
 .tmp_versions/
@@ -51,11 +95,63 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# debug information files
-*.dwo
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeUserPresets.json
+CMakeLists.txt.user
+compile_commands.json
+compile_flags.txt
+cmake-build-*/
 
-build/
-sdkconfig*
-__pycache__/
-*.pyc
-.DS_Store
+# --- ESP-IDF (applies to any project dir, including firmware/) ----------------
+**/build/                     # build/ (incl. bootloader/, partitions/, logs/)
+**/gdbinit/                   # generated gdb helpers
+**/flash_args
+**/flash_app_args
+**/flash_bootloader_args
+**/flash_project_args
+**/flasher_args.json
+**/project_description.json
+**/project_elf_src_*.c
+**/x509_crt_bundle.S
+
+# sdkconfig policy:
+#  a) Current default: DO NOT version sdkconfig (per-dev/local)  -> keep next line
+**/sdkconfig
+#  b) If you prefer reproducible builds in VCS: comment the line above and commit firmware/sdkconfig
+**/sdkconfig.old
+**/sdkconfig.ci
+**/sdkconfig.defaults.tmp
+
+# ESP-IDF Component Manager:
+#  - dependencies.lock SHOULD be committed
+#  - managed_components is re-generated -> ignore it by default
+**/managed_components/
+#  If you want to vendor components offline, remove the line above.
+
+# --- Documentation / Doxygen --------------------------------------------------
+**/docs/html/
+**/docs/latex/
+
+# --- Logs / caches / temp -----------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.cache
+.cache/
+*.bak
+*.orig
+nohup.out
+
+# --- Tooling / analysis / notebooks ------------------------------------------
+.clangd/
+.clangd-cache/
+.ipynb_checkpoints/
+
+# --- Local env / secrets ------------------------------------------------------
+.env
+.env.*
+config/*.local
+config/*.secret
